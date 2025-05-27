@@ -1,0 +1,30 @@
+:root {
+  --stva-primary-color: #08d5ff;
+  --stva-gray-color: #404040;
+  --stva-orange-color: #ff7900;
+  --stva-danger-color: #ec3a3a;
+
+  --header-height: 80px; 
+
+}
+
+$breakpoint-xs: 0;      // Extra small devices (phones, 600px and down)
+$breakpoint-sm: 600px;  // Small devices (portrait tablets and large phones, 600px and up)
+$breakpoint-md: 768px;  // Medium devices (landscape tablets, 768px and up)
+$breakpoint-lg: 992px;  // Large devices (laptops/desktops, 992px and up)
+$breakpoint-xl: 1200px; // Extra large devices (large laptops and desktops, 1200px and up)
+
+
+body {
+  --100vh-header: calc(100dvh - var(--header-height));
+}
+
+@media (max-width: $breakpoint-xl) {
+  body {
+    --100vh-header: 100dvh;
+  }
+}
+
+.vh-100-header{
+  height: var(--100vh-header);
+}

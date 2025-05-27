@@ -1,0 +1,89 @@
+@import './mixins.scss';
+@import './layout/vars';
+@import './layout/fonts';
+@import './layout/header';
+@import './layout/footer';
+@import './layout/animations';
+
+
+.stv_theme_body {
+  background-color: #fff;
+  font-size: 14px;
+  font-family: var(--primary-font);
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 8px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background-color: #aeaeae;
+        border-radius: 20px;
+    }
+  
+    &::-webkit-scrollbar-track {
+        background: #ecebeb;
+        border-radius: 20px;
+    }
+  
+  }
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    main {
+      flex: 1;
+      position: relative;
+    }
+  }
+  
+  .stv-row {
+    display: flex;
+    &.wrap {
+      flex-wrap: wrap;
+    }
+  }
+  
+  .stv-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @for $i from 8 through 50 {
+    .mb-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+    .mt-#{$i} {
+      margin-top: #{$i}px;
+    }
+  }
+
+}
+
+.bg-move-inline {
+  background-size: cover;
+  background-position: center;
+  animation: moveBackground 20s linear infinite; /* Ajusta el tiempo según lo que desees */
+}
+
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

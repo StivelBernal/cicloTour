@@ -1,0 +1,55 @@
+$browser-context: 14; 
+
+@function rem($pixels, $context: $browser-context) {
+  @return  ($pixels / $context) * 0.85rem;
+}
+
+@function toRGB ($color) {
+    @return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+@function toRGB ($color) {
+  @return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+@function maxWidthPage () {
+  @return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+@mixin max-width-page {
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+@mixin shimmer() {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+  pointer-events: none;
+}
+
+@mixin call-to-action {
+  align-items: center;
+  background-color: var(--stva-primary-color);
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: rem(16);
+  font-weight: 600;
+  height: 47px;
+  justify-content: center;
+  transition: all linear 0.5s;
+  width: 100px;
+  &:hover {
+    background-color: var(--stva-orange-color);
+    opacity: 0.7;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
